@@ -1,8 +1,10 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
-app.use(cors());
+
+// Basic API endpoint for testing
 app.get('/api/test', (req, res) => {
     res.json({ message: 'TNPSC Quiz Backend Working!' });
 });
+
+// Export the app for Vercel
 module.exports = app;
