@@ -1,6 +1,8 @@
-// api/index.js
-const serverless = require("serverless-http");
-const app = require("../src/app"); // adjust if your file is not exactly there
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
+app.listen(3000, () => console.log("Server ready on port 3000."));
 
 module.exports = app;
-module.exports.handler = serverless(app);
