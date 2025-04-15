@@ -1,11 +1,13 @@
+const express = require("express");
+const serverless = require("serverless-http");
 
-const express = require('express');
 const app = express();
 
-// Basic API endpoint for testing
-app.get('/api/test', (req, res) => {
-    res.json({ message: 'TNPSC Quiz Backend Working!' });
+app.use(express.json());
+
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello from Express on Vercel!" });
 });
 
-// Export the app for Vercel
 module.exports = app;
+module.exports.handler = serverless(app);
